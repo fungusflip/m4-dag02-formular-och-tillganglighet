@@ -19,13 +19,80 @@
 
   <main>
     <h2>Boka bord</h2>
-    <!-- TODO: Skriv ingressen från innehall.md -->
+    <p>Fyll i formuläret så bekräftar vi din bokning inom ett dygn. Fält markerade med * är obligatoriska.</p>
 
     <form action="#" method="post">
-      <!-- TODO 1: fält för namn, e-post, telefon, datum (label + input med for/id) -->
-      <!-- TODO 2: rullista för antal personer, textarea för önskemål -->
-      <!-- TODO 3: fieldset + legend för kostönskemål och bekräftelsesätt -->
-      <!-- TODO 4: samtyckeskryssruta (required) och skickaknapp -->
+      <div class="falt">
+        <label for="namn">Namn *</label>
+        <input type="text" id="namn" name="namn" autocomplete="name" required>
+      </div>
+
+      <div class="falt">
+        <label for="epost">E-postadress *</label>
+        <input type="email" id="epost" name="epost" autocomplete="email" required>
+      </div>
+
+      <div class="falt">
+        <label for="telefon">Telefon (valfritt)</label>
+        <input type="tel" id="telefon" name="telefon" autocomplete="tel">
+      </div>
+
+      <div class="falt">
+        <label for="datum">Datum *</label>
+        <input type="date" id="datum" name="datum" required>
+      </div>
+
+      <div class="falt">
+        <label for="antal">Antal personer *</label>
+        <select id="antal" name="antal" required>
+          <option value="">Välj antal</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5+">5 eller fler</option>
+        </select>
+      </div>
+
+      <fieldset>
+        <legend>Kostönskemål</legend>
+        <div class="falt">
+          <input type="checkbox" id="kost-vegetarisk" name="kost" value="vegetarisk">
+          <label for="kost-vegetarisk">Vegetarisk</label>
+        </div>
+        <div class="falt">
+          <input type="checkbox" id="kost-vegansk" name="kost" value="vegansk">
+          <label for="kost-vegansk">Vegansk</label>
+        </div>
+        <div class="falt">
+          <input type="checkbox" id="kost-glutenfri" name="kost" value="glutenfri">
+          <label for="kost-glutenfri">Glutenfri</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Hur vill du få bekräftelsen? *</legend>
+        <div class="falt">
+          <input type="radio" id="svar-epost" name="svar" value="epost" required>
+          <label for="svar-epost">E-post</label>
+        </div>
+        <div class="falt">
+          <input type="radio" id="svar-sms" name="svar" value="sms">
+          <label for="svar-sms">SMS</label>
+        </div>
+      </fieldset>
+
+      <div class="falt">
+        <label for="onskemal">Övriga önskemål</label>
+        <textarea id="onskemal" name="onskemal" rows="4"></textarea>
+      </div>
+
+      <div class="falt">
+        <input type="checkbox" id="samtycke" name="samtycke" required>
+        <label for="samtycke">Jag godkänner att Kafé Kardemumma sparar mina uppgifter för bokningen. *</label>
+      </div>
+
+      <button type="submit">Skicka bokning</button>
     </form>
   </main>
 
